@@ -1,17 +1,17 @@
-# Real World Image Classification Scenarios
+# Real World Image Classification Scenarios:
 
 This project demonstrates a real-world image classification scenario using a Convolutional Neural Network (CNN) to classify images of cats and dogs.
 
 ---
 
-## Dataset
+## Dataset:
 
 - The dataset is stored in Google Drive under a folder named `cats_dogs`.
 - Folder structure:
 
 ---
 
-## Model
+## Model:
 
 - Implemented using **PyTorch**
 - Network structure includes:
@@ -24,7 +24,7 @@ This project demonstrates a real-world image classification scenario using a Con
 
 ---
 
-## Key Features
+## Key Features:
 
 - Image augmentation with `transforms.Compose`
 - `ImageFolder` based dataset loading
@@ -37,9 +37,9 @@ This project demonstrates a real-world image classification scenario using a Con
 
 ---
 
-## Full Code with Step-by-Step Explanation
+## Full Code with Step-by-Step Explanation:
 
-### 1. Mount Google Drive and Import Libraries
+### 1. Mount Google Drive and Import Libraries:
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
@@ -59,7 +59,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import numpy as np
 from PIL import Image
 ```
-### 2. Dataset Preparation
+### 2. Dataset Preparation:
 ```python
 root = "/content/drive/MyDrive/cats_dogs"
 
@@ -90,7 +90,7 @@ test_loader = DataLoader(test_data, batch_size=32, shuffle=False)
 class_names = train_data.classes
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 ```
-### 3. CNN Model Definition
+### 3. CNN Model Definition:
 ```python
 class CNNModel(nn.Module):
     def __init__(self):
@@ -117,7 +117,7 @@ class CNNModel(nn.Module):
 
 model = CNNModel().to(device)
 ```
-### 4. Training Loop
+### 4. Training Loop:
 ```python
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
@@ -150,7 +150,7 @@ def train_model(model, train_loader, val_loader, epochs=10):
 
 train_model(model, train_loader, val_loader, epochs=10)
 ```
-### 5. Evaluation and Confusion Matrix
+### 5. Evaluation and Confusion Matrix:
 ```python
 model.eval()
 all_preds = []
@@ -169,15 +169,15 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
 disp.plot()
 plt.show()
 ```
-## Output
-### Sample
+## Output:
+### Sample:
 <img width="485" height="508" alt="Screenshot 2025-07-26 172617" src="https://github.com/user-attachments/assets/6076abdc-6ca4-4e89-b1db-5d8785d785c0" />
 
-### Confusion Matrix
+### Confusion Matrix:
 <img width="662" height="595" alt="Screenshot 2025-07-26 172606" src="https://github.com/user-attachments/assets/233b0777-2a1b-4804-aa9e-d3303d7e5596" />
 
 
-## Result
+## Result:
 Model successfully trained and evaluated on the cats vs dogs dataset with visualization and predictions on unseen images.
 
 
