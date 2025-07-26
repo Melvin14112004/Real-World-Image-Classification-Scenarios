@@ -172,6 +172,7 @@ plt.show()
 ## Output
 ### Sample
 <img width="485" height="508" alt="Screenshot 2025-07-26 172617" src="https://github.com/user-attachments/assets/6076abdc-6ca4-4e89-b1db-5d8785d785c0" />
+
 ### Confusion Matrix
 <img width="662" height="595" alt="Screenshot 2025-07-26 172606" src="https://github.com/user-attachments/assets/233b0777-2a1b-4804-aa9e-d3303d7e5596" />
 
